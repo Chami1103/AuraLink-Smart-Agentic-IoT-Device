@@ -2,6 +2,12 @@
 
 <div align="center">
 
+![team](https://github.com/Chami1103/AuraLink-Smart-Agentic-IoT-Device/blob/main/team.png)
+![value](https://github.com/Chami1103/AuraLink-Smart-Agentic-IoT-Device/blob/main/value.png)
+![device](https://github.com/Chami1103/AuraLink-Smart-Agentic-IoT-Device/blob/main/device.png)
+
+
+
 ![AuraLink Banner](https://img.shields.io/badge/AuraLink-Smart_IoT-blue?style=for-the-badge)
 ![Group ID](https://img.shields.io/badge/Group_ID-62-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
