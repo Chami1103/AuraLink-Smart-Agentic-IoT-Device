@@ -1,0 +1,23 @@
+﻿# Python
+__pycache__/
+*.pyc
+backend/token.json
+backend/credentials.json
+
+# Arduino build
+*.bin
+*.elf
+*.hex
+*.log
+
+# Node / general
+node_modules/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE & Misc
+.vscode/
+.idea/
