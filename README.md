@@ -95,10 +95,17 @@ Publishes response → auralink/display/output.
 
 ESP32 displays both + updates LED color.
 
-📸 Screenshots
-Located in /docs
+## 📸 System Overview
 
-device.png
+### Device Prototype
+![Device](docs/device.png)
+
+### Team Members
+![Team](docs/team.png)
+
+### Value Proposition
+![Value](docs/value.png)
+
 
 
 
