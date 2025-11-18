@@ -174,12 +174,7 @@ Output: "3 urgent: Meeting 2pm,
 <td>AI/Backend Lead</td>
 <td>LLM Integration, Email API, Backend Development</td>
 </tr>
-<tr>
-<td>🔄 [Your Name]</td>
-<td>[Your ID]</td>
-<td>Integration Lead</td>
-<td>System Integration, Testing, Documentation</td>
-</tr>
+
 </table>
 
 ---
