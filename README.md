@@ -2,782 +2,208 @@
 
 <div align="center">
 
-![team](https://github.com/Chami1103/AuraLink-Smart-Agentic-IoT-Device/blob/main/team.png)
-![value](https://github.com/Chami1103/AuraLink-Smart-Agentic-IoT-Device/blob/main/value.png)
-![device](https://github.com/Chami1103/AuraLink-Smart-Agentic-IoT-Device/blob/main/device.png)
-
-
-
-![AuraLink Banner](https://img.shields.io/badge/AuraLink-Smart_IoT-blue?style=for-the-badge)
-![Group ID](https://img.shields.io/badge/Group_ID-62-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
-
 **Transforming Raw Data into Intelligent, Meaningful Insights**
 
-🎓 **IT4030 - Internet of Things** | 📅 **Year 4, Semester 1/2, 2025** | 🏛️ **SLIIT**
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![ESP32](https://img.shields.io/badge/Hardware-ESP32-blue.svg)](https://www.espressif.com/en/products/socs/esp32)
+[![Python](https://img.shields.io/badge/Python-3.8+-green.svg)](https://www.python.org/)
+[![OpenAI](https://img.shields.io/badge/AI-OpenAI-412991.svg)](https://openai.com/)
 
-[Features](#-features) • [Installation](#-installation-guide) • [Documentation](#-system-architecture) • [Troubleshooting](#-troubleshooting)
+🎓 **IT4030 - Internet of Things** | 📅 Year 4, Semester 1/2, 2025 | 🏛️ SLIIT
 
-</div>
+[Features](#-features) • [Architecture](#️-system-architecture) • [Quick Start](#-quick-start-guide) • [Troubleshooting](#-troubleshooting)
 
 ---
 
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#1a1a2e"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#00d9ff" text-anchor="middle">
+    AuraLink Smart Agentic IoT Device
+  </text>
+
+  ---
+  
+![device](https://github.com/Chami1103/AuraLink-Smart-Agentic-IoT-Device/blob/main/Sample_preview.png)
+
 ## 📖 Table of Contents
 
-<table>
-<tr>
-<td width="50%">
-
-### 🎯 Getting Started
 - [Project Overview](#-project-overview)
-- [Team Members](#-team-members)
-- [Key Features](#-features)
-- [Quick Start](#-quick-start-guide)
-
-</td>
-<td width="50%">
-
-### 🔧 Technical Details
-- [System Architecture](#-system-architecture)
-- [Hardware Setup](#-hardware-requirements)
-- [Software Setup](#-software-requirements)
-- [Configuration](#-configuration)
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 📚 Usage & Support
-- [Usage Instructions](#-usage-instructions)
-- [MQTT Communication](#-mqtt-topics--communication)
+- [Features](#-features)
+- [System Architecture](#️-system-architecture)
+- [Hardware Requirements](#-hardware-requirements)
+- [Software Requirements](#-software-requirements)
+- [Quick Start Guide](#-quick-start-guide)
+- [MQTT Topics & Payloads](#-mqtt-topics--payloads)
+- [Configuration](#️-configuration)
 - [Troubleshooting](#-troubleshooting)
-
-</td>
-<td width="50%">
-
-### 🚀 Advanced
-- [Data Formats](#-json-data-formats)
-- [Urgency System](#-urgency-level-system)
 - [Future Extensions](#-future-extensions)
-
-</td>
-</tr>
-</table>
+- [Files & Downloads](#-files--downloads)
+- [License](#-license)
 
 ---
 
 ## 🎯 Project Overview
 
-<table>
-<tr>
-<td width="60%">
+**AuraLink** is a Smart Agentic IoT Device that transforms raw environmental sensor data and email communications into intelligent, context-aware insights using an LLM backend. The system employs an ESP32 with DHT22/BME280 sensors, communicates via MQTT, and uses a Python backend (LangChain + OpenAI) to generate literature-style quotes and concise email summaries.
 
-### What is AuraLink?
+### Key Highlights
+- 📊 Real-time environmental monitoring
+- 🤖 AI-powered insight generation
+- 📧 Intelligent email summarization
+- 🎨 Visual urgency indicators
+- 📱 Compact OLED display interface
 
-**AuraLink** is a revolutionary Smart Agentic IoT Device that bridges the gap between raw sensor data and meaningful insights. Unlike traditional IoT devices that merely display numbers, AuraLink uses **Large Language Models (LLM)** to transform environmental readings into:
-
-✨ **Literature-inspired quotes** that provide emotional context  
-📧 **Intelligent email summaries** that combat information overload  
-🚦 **Visual urgency indicators** for immediate situational awareness
-
-### The Problem We Solve
-
-**Traditional IoT:** "Temperature: 30°C" ❌  
-**AuraLink:** "In warmth, life blooms with gentle patience" ✅
-
-</td>
-<td width="40%">
-
-```
-┌─────────────────────┐
-│   🌡️ Sensors        │
-│   Temperature       │
-│   Humidity          │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│   🤖 AI Brain       │
-│   LangChain +       │
-│   OpenAI API        │
-└──────────┬──────────┘
-           │
-           ▼
-┌─────────────────────┐
-│   📱 Smart Display  │
-│   Quotes + Emails   │
-│   LED Urgency       │
-└─────────────────────┘
-```
-
-</td>
-</tr>
-</table>
-
-### 🎪 Dual Output Innovation
-
-<table>
-<tr>
-<th width="50%">🎨 Creative Contextualization</th>
-<th width="50%">📊 Information Reduction</th>
-</tr>
-<tr>
-<td>
-
-```
-Input:  Temp: 28°C, Humidity: 65%
-
-Output: "In warmth, life blooms 
-         with gentle patience"
-```
-
-**Transforms** cold data into engaging, context-aware literature
-
-</td>
-<td>
-
-```
-Input:  15 unread emails (2,453 words)
-
-Output: "3 urgent: Meeting 2pm,
-         Project due Friday,
-         Client feedback needed"
-```
-
-**Reduces** information overload to actionable insights (2-3 sentences)
-
-</td>
-</tr>
-</table>
-
----
-
-## 👥 Team Members
-
-<table>
-<tr>
-<th>Name</th>
-<th>Student ID</th>
-<th>Role</th>
-<th>Responsibilities</th>
-</tr>
-<tr>
-<td>🔧 Fernando M.G.S.S.A</td>
-<td>IT19970882</td>
-<td>Hardware Lead</td>
-<td>ESP32 Firmware, Sensor Integration, Circuit Design</td>
-</tr>
-<tr>
-<td>🤖 Perera B.C.V</td>
-<td>IT20196110</td>
-<td>AI/Backend Lead</td>
-<td>LLM Integration, Email API, Backend Development</td>
-</tr>
-
-</table>
-
----
-
-## 🏗️ System Architecture
-
-### Three-Layer Architecture
-
-```
-╔═══════════════════════════════════════════════════════════════════════════════════╗
-║                            AURALINK SYSTEM ARCHITECTURE                           ║
-╚═══════════════════════════════════════════════════════════════════════════════════╝
-
-┌─────────────────────────┐         ┌──────────────────────┐         ┌──────────────────────────┐
-│                         │         │                      │         │                          │
-│   📟 IoT DEVICE LAYER   │◄───────►│  📡 COMMUNICATION    │◄───────►│   🧠 BACKEND AI LAYER    │
-│                         │         │      LAYER           │         │                          │
-│  ┌──────────────────┐   │         │                      │         │  ┌────────────────────┐  │
-│  │   ESP32-WROOM    │   │         │   MQTT BROKER        │         │  │   Python Server    │  │
-│  │   Wi-Fi Enabled  │   │         │   (Pub/Sub Model)    │         │  │   Flask/FastAPI    │  │
-│  └──────────────────┘   │         │                      │         │  └────────────────────┘  │
-│                         │         │  📤 Publish Topics:  │         │                          │
-│  ┌──────────────────┐   │         │  ├─ sensor/data      │         │  ┌────────────────────┐  │
-│  │   DHT22 Sensor   │───┼────┐    │  │                   │         │  │   LangChain Core   │  │
-│  │   Temp & Humid   │   │    │    │  📥 Subscribe Topics:│         │  │   + OpenAI API     │  │
-│  └──────────────────┘   │    │    │  └─ ai/response      │         │  └────────────────────┘  │
-│                         │    │    │                      │         │                          │
-│  ┌──────────────────┐   │    │    │  🔐 Protocol:        │         │  ┌────────────────────┐  │
-│  │  OLED Display    │◄──┼────┘    │     MQTT v3.1.1      │         │  │  Email API Client  │  │
-│  │  128x64 I2C      │   │         │     Port: 1883       │         │  │  Gmail/Outlook     │  │
-│  └──────────────────┘   │         │                      │         │  └────────────────────┘  │
-│                         │         │  ⚡ Features:        │         │                          │
-│  ┌──────────────────┐   │         │  • Lightweight       │         │  ┌────────────────────┐  │
-│  │   RGB LED        │◄──┤         │  • Bidirectional     │         │  │   Data Logger      │  │
-│  │   Urgency Cue    │   │         │  • QoS Support       │         │  │   + Timestamps     │  │
-│  └──────────────────┘   │         │  • Low Latency       │         │  └────────────────────┘  │
-│                         │         │                      │         │                          │
-└─────────────────────────┘         └──────────────────────┘         └──────────────────────────┘
-```
-
-### 🔄 Data Flow Visualization
-
-```
-STEP 1: SENSE                STEP 2: PUBLISH              STEP 3: PROCESS
-┌──────────┐                ┌──────────┐                ┌──────────┐
-│ 🌡️ 28°C  │───────────────►│   MQTT   │───────────────►│    AI    │
-│ 💧 65%   │    JSON Data   │  Broker  │  Sensor Data   │  Backend │
-└──────────┘                └──────────┘                └──────────┘
-  ESP32                                                       │
-                                                              │ LLM Processing
-                                                              ▼
-STEP 6: DISPLAY             STEP 5: RECEIVE              STEP 4: GENERATE
-┌──────────┐                ┌──────────┐                ┌──────────┐
-│  📱💡    │◄───────────────│   MQTT   │◄───────────────│ ✨📧🎨   │
-│ Quote +  │   AI Response  │  Broker  │  AI Outputs    │ Quote +  │
-│  Email   │                └──────────┘                │  Summary │
-└──────────┘                                            └──────────┘
-  OLED + LED                                              LangChain
-```
-
-### 📊 Component Interaction Map
-
-```
-                                    ┌─────────────────────────┐
-                                    │   🌐 User's Gmail       │
-                                    │   Inbox (Cloud)         │
-                                    └───────────┬─────────────┘
-                                                │ Gmail API
-                                                ▼
-┌───────────────┐    ┌──────────┐    ┌─────────────────────┐    ┌──────────────┐
-│   DHT22       │───►│          │───►│                     │───►│              │
-│   Sensor      │    │          │    │   Python Backend    │    │   OpenAI     │
-└───────────────┘    │          │    │                     │    │   GPT API    │
-                     │  ESP32   │    │  • Data Logger      │    │              │
-┌───────────────┐    │          │    │  • LangChain        │    └──────────────┘
-│   OLED        │◄───│          │◄───│  • Email Fetcher    │
-│   Display     │    │          │    │  • Quote Generator  │
-└───────────────┘    │          │    └─────────────────────┘
-                     │          │              ▲
-┌───────────────┐    │          │              │
-│   RGB LED     │◄───│          │              │
-│   (Urgency)   │    └──────────┘              │
-└───────────────┘         │                    │
-                          │                    │
-                          └────────────────────┘
-                              MQTT Protocol
-                           (Bidirectional Pub/Sub)
-```
+> 📄 Full technical report available in the repository.
 
 ---
 
 ## ✨ Features
 
-<table>
-<tr>
-<td width="33%">
+| Feature | Description |
+|---------|-------------|
+| 🌡️ **Environmental Monitoring** | Real-time temperature & humidity tracking |
+| 📝 **Literary Quotes** | LLM-generated contextual quotes based on sensor data |
+| 📧 **Email Intelligence** | Secure OAuth2-based email summarization (Gmail/Outlook) |
+| 🚦 **Urgency Indicator** | RGB LED status (🟢 Green / 🟡 Yellow / 🔴 Red) |
+| 📺 **OLED Display** | 128×64 display with automatic paging and text wrapping |
+| 📡 **MQTT Communication** | Low-latency bidirectional messaging |
 
-### 🔧 Hardware Features
+---
 
-```
-✅ Real-time Monitoring
-   └─ Temperature (±1°C)
-   └─ Humidity (±5%)
-
-✅ Visual Output
-   └─ 128x64 OLED Display
-   └─ Text word-wrapping
-   └─ Auto page switching
-
-✅ Urgency System
-   └─ RGB LED Indicator
-   └─ 3-level alerting
-   └─ Color-coded feedback
-
-✅ Low Power Design
-   └─ ESP32 deep sleep
-   └─ Efficient sensors
-   └─ Smart scheduling
-```
-
-</td>
-<td width="33%">
-
-### 💻 Software Features
+## 🏗️ System Architecture
 
 ```
-✅ Communication
-   └─ MQTT Pub/Sub
-   └─ JSON serialization
-   └─ Auto-reconnection
-   └─ QoS level 1
-
-✅ Data Management
-   └─ Timestamped logs
-   └─ Structured storage
-   └─ Error handling
-   └─ Buffer management
-
-✅ Display Logic
-   └─ Dynamic updates
-   └─ Text formatting
-   └─ Multi-page views
-   └─ Smooth transitions
+┌─────────────┐      MQTT       ┌──────────────┐      API      ┌─────────────┐
+│   ESP32     │ ◄────────────► │ MQTT Broker  │ ◄───────────► │   Backend   │
+│ (Sensors)   │  Pub/Sub        │              │               │ (LangChain) │
+│ DHT22/BME   │                 │              │               │  + OpenAI   │
+│ OLED + LED  │                 │              │               │  + Gmail    │
+└─────────────┘                 └──────────────┘               └─────────────┘
 ```
 
-</td>
-<td width="33%">
+**Data Flow:**
+1. ESP32 reads sensor data → Publishes to `auralink/sensors/data`
+2. Backend receives data → Processes with LLM + Email API
+3. Backend publishes response → `auralink/display/output`
+4. ESP32 displays quote on OLED + Sets LED urgency color
 
-### 🤖 AI Features
-
-```
-✅ Quote Generation
-   └─ Context-aware
-   └─ Literature-style
-   └─ Environment-based
-   └─ Creative output
-
-✅ Email Intelligence
-   └─ Inbox scanning
-   └─ Smart summarization
-   └─ Urgency detection
-   └─ 2-3 sentence output
-
-✅ Learning System
-   └─ Pattern recognition
-   └─ User preferences
-   └─ Adaptive responses
-   └─ Continuous improvement
-```
-
-</td>
-</tr>
-</table>
+> Detailed architecture diagrams available in the technical report.
 
 ---
 
 ## 🔌 Hardware Requirements
 
-### 📦 Components Checklist
+### Core Components
 
-<table>
-<tr>
-<th>Component</th>
-<th>Specification</th>
-<th>Qty</th>
-<th>Price (Est.)</th>
-<th>Purpose</th>
-</tr>
-<tr>
-<td>🔷 ESP32 Dev Board</td>
-<td>ESP32-WROOM-32</td>
-<td>1</td>
-<td>$6-10</td>
-<td>Main microcontroller with Wi-Fi</td>
-</tr>
-<tr>
-<td>🌡️ DHT22 Sensor</td>
-<td>AM2302 (DHT22)</td>
-<td>1</td>
-<td>$4-8</td>
-<td>Temperature & Humidity sensing</td>
-</tr>
-<tr>
-<td>📱 OLED Display</td>
-<td>128x64, I2C, SSD1306</td>
-<td>1</td>
-<td>$3-6</td>
-<td>Text output display</td>
-</tr>
-<tr>
-<td>🚦 RGB LED</td>
-<td>Common Cathode, 5mm</td>
-<td>1</td>
-<td>$0.50</td>
-<td>Visual urgency indicator</td>
-</tr>
-<tr>
-<td>⚡ Resistors</td>
-<td>220Ω, 1/4W</td>
-<td>3</td>
-<td>$0.30</td>
-<td>LED current limiting</td>
-</tr>
-<tr>
-<td>🔌 Breadboard</td>
-<td>830 tie-points</td>
-<td>1</td>
-<td>$2-4</td>
-<td>Circuit prototyping</td>
-</tr>
-<tr>
-<td>🔗 Jumper Wires</td>
-<td>Male-to-Male, 20cm</td>
-<td>15+</td>
-<td>$2-3</td>
-<td>Component connections</td>
-</tr>
-<tr>
-<td>🔋 USB Cable</td>
-<td>Micro-USB or USB-C</td>
-<td>1</td>
-<td>$2-5</td>
-<td>Power & Programming</td>
-</tr>
-<tr>
-<td colspan="3"><strong>TOTAL COST</strong></td>
-<td colspan="2"><strong>~$25-40 USD</strong></td>
-</tr>
-</table>
+| Component | Specification | Quantity | Notes |
+|-----------|--------------|----------|-------|
+| **ESP32 Dev Board** | ESP32-WROOM-32 | 1 | Main microcontroller |
+| **Temperature Sensor** | DHT22 or BME280 | 1 | Temp & humidity |
+| **OLED Display** | 128×64 SSD1306 (I2C) | 1 | Visual output |
+| **RGB LED** | Common Cathode, 5mm | 1 | Urgency indicator |
+| **Resistors** | 220Ω | 3 | For RGB LED |
+| **Breadboard** | Standard | 1 | Prototyping |
+| **Jumper Wires** | Male-to-Male | ~20 | Connections |
+| **USB Cable** | Micro-USB or USB-C | 1 | Power & programming |
 
-### 🔌 Pin Connection Diagram
+**Estimated Total Cost:** ~$25–40 USD
 
-```
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                         ESP32 PIN CONNECTIONS                                ║
-╚══════════════════════════════════════════════════════════════════════════════╝
+### Pin Configuration
 
-                        ┌─────────────────────┐
-                        │                     │
-                        │      ESP32-32S      │
-                        │   Development Kit   │
-                        │                     │
-         ┌──────────────┤ 3V3            GND  ├──────────────┐
-         │              │                     │              │
-         │              │ GPIO 21 (SDA)  GND  ├──────────────┤
-         │              │ GPIO 22 (SCL)       │              │
-         │              │                     │              │
-         │              │ GPIO 4    (DHT)     │              │
-         │              │                     │              │
-         │              │ GPIO 25   (LED_R)   │              │
-         │              │ GPIO 26   (LED_G)   │              │
-         │              │ GPIO 27   (LED_B)   │              │
-         │              └─────────────────────┘              │
-         │                                                   │
-         │                                                   │
-    ┌────▼────┐     ┌──────────┐     ┌──────────┐     ┌────▼────┐
-    │ DHT22   │     │   OLED   │     │ RGB LED  │     │   GND   │
-    │ Sensor  │     │ Display  │     │          │     │  Common │
-    └─────────┘     └──────────┘     └──────────┘     └─────────┘
-
-
-DHT22 SENSOR PINOUT:          OLED DISPLAY PINOUT:       RGB LED PINOUT:
-┌───────────────┐             ┌───────────────┐          ┌───────────────┐
-│ 1: VCC → 3.3V │             │ VCC → 3.3V    │          │ R → GPIO 25   │
-│ 2: DATA→ GP4  │             │ GND → GND     │          │   (via 220Ω)  │
-│ 3: NC         │             │ SCL → GPIO 22 │          │ G → GPIO 26   │
-│ 4: GND → GND  │             │ SDA → GPIO 21 │          │   (via 220Ω)  │
-└───────────────┘             └───────────────┘          │ B → GPIO 27   │
-                                                         │   (via 220Ω)  │
-                                                         │ - → GND       │
-                                                         └───────────────┘
-```
-
-### 🎨 Circuit Schematic
-
-```
-                    3.3V                     GND
-                     │                        │
-                     ├────────────────────────┤
-                     │                        │
-                ┌────┴────┐              ┌───┴───┐
-                │ DHT22   │              │ OLED  │
-                │ Sensor  │              │ I2C   │
-                └────┬────┘              └───┬───┘
-                     │                       │
-                  GPIO 4                  GPIO 21,22
-                     │                       │
-        ┌────────────┴───────────────────────┴────────────┐
-        │                                                  │
-        │                  ESP32-WROOM-32                  │
-        │                                                  │
-        │  GPIO 25 ──┬─── [220Ω] ──┬─── RED              │
-        │  GPIO 26 ──┼─── [220Ω] ──┼─── GREEN    RGB     │
-        │  GPIO 27 ──┼─── [220Ω] ──┼─── BLUE     LED     │
-        │            │              └──────────────┐      │
-        │            │                             │      │
-        │           GND ───────────────────────────┴──────┤
-        │                                                  │
-        └──────────────────────────────────────────────────┘
-```
+| Component | ESP32 Pin |
+|-----------|-----------|
+| DHT22 Data | GPIO 4 |
+| OLED SDA | GPIO 21 |
+| OLED SCL | GPIO 22 |
+| RGB LED (Red) | GPIO 25 (via 220Ω) |
+| RGB LED (Green) | GPIO 26 (via 220Ω) |
+| RGB LED (Blue) | GPIO 27 (via 220Ω) |
 
 ---
 
 ## 💻 Software Requirements
 
-### 🛠️ Development Environment Setup
-
-<table>
-<tr>
-<td width="50%">
-
-### For ESP32 Firmware
-
-**Arduino IDE Configuration:**
-```
-Arduino IDE Version: 1.8.19+ or 2.x
-Board: ESP32 Dev Module
-Upload Speed: 921600
-Flash Frequency: 80MHz
-Flash Mode: QIO
-Flash Size: 4MB (32Mb)
-Partition Scheme: Default 4MB
-```
+### ESP32 Firmware (Arduino IDE)
 
 **Required Libraries:**
-| Library | Version | Purpose |
-|---------|---------|---------|
-| 📶 WiFi | Built-in | Network connectivity |
-| 📡 PubSubClient | 2.8.0+ | MQTT communication |
-| 🌡️ DHT sensor library | 1.4.4+ | DHT22 reading |
-| 📊 Adafruit GFX | 1.11.5+ | Graphics primitives |
-| 📱 Adafruit SSD1306 | 2.5.7+ | OLED display driver |
-| 📝 ArduinoJson | 6.21.3+ | JSON parsing |
+- `PubSubClient` (MQTT communication)
+- `DHT sensor library` (DHT22 support)
+- `Adafruit GFX` (Graphics primitives)
+- `Adafruit SSD1306` (OLED display driver)
+- `ArduinoJson` (JSON parsing)
 
-</td>
-<td width="50%">
-
-### For Backend Server
-
-**Python Environment:**
-```bash
-Python Version: 3.8 - 3.11
-Package Manager: pip
-Virtual Environment: Recommended
-Operating System: Linux/Windows/macOS
+**Installation:**
+```
+Arduino IDE → Tools → Manage Libraries → Search and install above
 ```
 
-**Required Packages:**
+### Backend (Python 3.8+)
+
+**Setup Virtual Environment:**
 ```bash
-# Core Framework
-flask>=2.3.0
-flask-cors>=4.0.0
-
-# MQTT Communication
-paho-mqtt>=1.6.1
-
-# AI/LLM Integration
-langchain>=0.0.200
-openai>=0.27.0
-
-# Email Integration
-google-auth>=2.20.0
-google-auth-oauthlib>=1.0.0
-google-api-python-client>=2.88.0
-
-# Utilities
-python-dotenv>=1.0.0
-requests>=2.31.0
-```
-
-</td>
-</tr>
-</table>
-
-### 📥 Quick Installation Commands
-
-```bash
-# ═══════════════════════════════════════════════════════════
-# ESP32 LIBRARY INSTALLATION (Arduino IDE)
-# ═══════════════════════════════════════════════════════════
-# 1. Go to: Sketch → Include Library → Manage Libraries
-# 2. Search and install each library listed above
-
-# ═══════════════════════════════════════════════════════════
-# BACKEND INSTALLATION (Terminal/Command Prompt)
-# ═══════════════════════════════════════════════════════════
-
-# Create virtual environment
 python -m venv auralink_env
+source auralink_env/bin/activate  # On Windows: auralink_env\Scripts\activate
+```
 
-# Activate virtual environment
-# Windows:
-auralink_env\Scripts\activate
-# Linux/Mac:
-source auralink_env/bin/activate
-
-# Install all dependencies
-pip install flask paho-mqtt langchain openai python-dotenv
-pip install google-auth google-auth-oauthlib google-api-python-client
-
-# Verify installation
-python --version
-pip list
+**Install Dependencies:**
+```bash
+pip install flask paho-mqtt langchain openai python-dotenv \
+            google-auth google-auth-oauthlib google-api-python-client requests
 ```
 
 ---
 
 ## 🚀 Quick Start Guide
 
-### ⚡ 5-Minute Setup
+### Step 1: Hardware Assembly
+1. Connect DHT22 data pin to GPIO 4
+2. Wire OLED display (SDA→21, SCL→22)
+3. Connect RGB LED through 220Ω resistors (R→25, G→26, B→27)
+4. Power ESP32 via USB
 
-```
-╔═══════════════════════════════════════════════════════════════════════════╗
-║  STEP 1: HARDWARE ASSEMBLY (5 minutes)                                   ║
-╚═══════════════════════════════════════════════════════════════════════════╝
+### Step 2: ESP32 Firmware
+1. Open `Aura_tec.ino` in Arduino IDE
+2. Update Wi-Fi credentials and MQTT broker address
+3. Select **Board:** ESP32 Dev Module
+4. Upload firmware to ESP32
 
-1. Connect components to ESP32 following pin diagram
-2. Double-check all connections
-3. Connect USB cable to computer
+### Step 3: Backend Configuration
+1. Create `.env` file with credentials:
+   ```env
+   OPENAI_API_KEY=sk-...
+   MQTT_BROKER=broker.hivemq.com
+   GMAIL_CREDENTIALS_FILE=credentials.json
+   ```
+2. Set up Google Cloud OAuth credentials
+3. Run backend: `python auralink_backend.py`
 
-╔═══════════════════════════════════════════════════════════════════════════╗
-║  STEP 2: SOFTWARE UPLOAD (3 minutes)                                     ║
-╚═══════════════════════════════════════════════════════════════════════════╝
+### Step 4: Verification
+1. Check serial monitor (115200 baud) for connection status
+2. Verify MQTT messages using MQTT Explorer
+3. Observe OLED display and LED indicators
 
-1. Open Aura_tec.ino in Arduino IDE
-2. Update WiFi credentials (lines 33-34)
-3. Select Board: "ESP32 Dev Module"
-4. Select Port: [Your COM port]
-5. Click Upload ⬆️
-
-╔═══════════════════════════════════════════════════════════════════════════╗
-║  STEP 3: BACKEND SETUP (5 minutes)                                       ║
-╚═══════════════════════════════════════════════════════════════════════════╝
-
-1. Create .env file with API keys
-2. Run: python auralink_backend.py
-3. Wait for "Backend Ready" message
-
-╔═══════════════════════════════════════════════════════════════════════════╗
-║  STEP 4: VERIFICATION (2 minutes)                                        ║
-╚═══════════════════════════════════════════════════════════════════════════╝
-
-1. Open Serial Monitor (115200 baud)
-2. Check for "AuraLink Ready!" message
-3. Verify sensor readings appear
-4. Watch OLED display for quotes/emails
-5. Confirm LED shows green (normal status)
-
-✅ TOTAL SETUP TIME: ~15 minutes
-```
+**⏱️ Total Setup Time:** ~15 minutes
 
 ---
 
-## ⚙️ Configuration
+## 📡 MQTT Topics & Payloads
 
-### 📝 ESP32 Configuration (Aura_tec.ino)
-
-```cpp
-// ═══════════════════════════════════════════════════════════════
-// NETWORK CONFIGURATION
-// ═══════════════════════════════════════════════════════════════
-const char* ssid = "YOUR_WIFI_SSID";           // 🔴 CHANGE THIS
-const char* password = "YOUR_WIFI_PASSWORD";   // 🔴 CHANGE THIS
-
-// ═══════════════════════════════════════════════════════════════
-// MQTT BROKER CONFIGURATION
-// ═══════════════════════════════════════════════════════════════
-const char* mqtt_server = "broker.hivemq.com"; // Public broker
-const int mqtt_port = 1883;
-const char* mqtt_client_id = "AuraLink_ESP32_001";
-
-// ═══════════════════════════════════════════════════════════════
-// MQTT TOPICS
-// ═══════════════════════════════════════════════════════════════
-const char* topic_sensor_data = "auralink/sensor/data";
-const char* topic_ai_response = "auralink/ai/response";
-
-// ═══════════════════════════════════════════════════════════════
-// TIMING CONFIGURATION (milliseconds)
-// ═══════════════════════════════════════════════════════════════
-const unsigned long SENSOR_READ_INTERVAL = 10000;  // Read every 10s
-const unsigned long DISPLAY_UPDATE_INTERVAL = 5000; // Update every 5s
-
-// ═══════════════════════════════════════════════════════════════
-// HARDWARE PIN CONFIGURATION
-// ═══════════════════════════════════════════════════════════════
-#define DHTPIN 4           // DHT22 data pin
-#define LED_RED 25         // RGB LED - Red
-#define LED_GREEN 26       // RGB LED - Green
-#define LED_BLUE 27        // RGB LED - Blue
+### Topic Hierarchy
 ```
-
-### 🔐 Backend Configuration (.env file)
-
-```bash
-# ═══════════════════════════════════════════════════════════════
-# OPENAI API CONFIGURATION
-# ═══════════════════════════════════════════════════════════════
-OPENAI_API_KEY=sk-proj-xxxxxxxxxxxxxxxxxxxxxxxxxx  # 🔴 REQUIRED
-OPENAI_MODEL=gpt-3.5-turbo
-OPENAI_TEMPERATURE=0.7
-OPENAI_MAX_TOKENS=150
-
-# ═══════════════════════════════════════════════════════════════
-# MQTT BROKER CONFIGURATION
-# ═══════════════════════════════════════════════════════════════
-MQTT_BROKER=broker.hivemq.com
-MQTT_PORT=1883
-MQTT_TOPIC_SENSOR=auralink/sensor/data
-MQTT_TOPIC_RESPONSE=auralink/ai/response
-MQTT_QOS=1
-MQTT_KEEPALIVE=60
-
-# ═══════════════════════════════════════════════════════════════
-# EMAIL API CONFIGURATION (Gmail)
-# ═══════════════════════════════════════════════════════════════
-GMAIL_CREDENTIALS_FILE=credentials.json  # 🔴 Download from Google Cloud
-GMAIL_TOKEN_FILE=token.json
-GMAIL_SCOPES=https://www.googleapis.com/auth/gmail.readonly
-
-# ═══════════════════════════════════════════════════════════════
-# SYSTEM CONFIGURATION
-# ═══════════════════════════════════════════════════════════════
-LOG_LEVEL=INFO
-LOG_FILE=auralink.log
-DEBUG_MODE=False
-
-# ═══════════════════════════════════════════════════════════════
-# URGENCY THRESHOLDS
-# ═══════════════════════════════════════════════════════════════
-TEMP_NORMAL_MIN=18
-TEMP_NORMAL_MAX=26
-TEMP_ADVISORY_MIN=15
-TEMP_ADVISORY_MAX=30
-HUMIDITY_NORMAL_MIN=40
-HUMIDITY_NORMAL_MAX=60
-```
-
----
-
-## 📡 MQTT Topics & Communication
-
-### 📊 Topic Structure
-
-```
-┌────────────────────────────────────────────────────────────┐
-│                    MQTT TOPIC HIERARCHY                    │
-└────────────────────────────────────────────────────────────┘
-
 auralink/
-├── sensor/
-│   └── data          📤 ESP32 → Backend (Sensor readings)
-│
-└── ai/
-    └── response      📥 Backend → ESP32 (AI outputs)
+├── sensors/
+│   └── data          # ESP32 → Backend (sensor readings)
+└── display/
+    └── output        # Backend → ESP32 (AI responses)
 ```
 
-### 📤 Published Topic: Sensor Data
-
-<table>
-<tr>
-<td width="30%"><strong>Topic Name</strong></td>
-<td width="70%"><code>auralink/sensor/data</code></td>
-</tr>
-<tr>
-<td><strong>Direction</strong></td>
-<td>ESP32 ➡️ Backend</td>
-</tr>
-<tr>
-<td><strong>Publish Rate</strong></td>
-<td>Every 10 seconds</td>
-</tr>
-<tr>
-<td><strong>QoS Level</strong></td>
-<td>1 (At least once)</td>
-</tr>
-<tr>
-<td><strong>Retained</strong></td>
-<td>No</td>
-</tr>
-</table>
-
-**Payload Format:**
+### Published: Sensor Data
+**Topic:** `auralink/sensors/data`  
+**QoS:** 1  
+**Payload Example:**
 ```json
 {
   "device_id": "AuraLink_ESP32_001",
@@ -787,17 +213,149 @@ auralink/
 }
 ```
 
-### 📥 Subscribed Topic: AI Response
+### Subscribed: AI Response
+**Topic:** `auralink/display/output`  
+**Payload Example:**
+```json
+{
+  "quote": "In warmth, life blooms with gentle patience",
+  "summary": "3 urgent: Meeting 2pm; Project due Fri; Client feedback",
+  "urgency": "red"
+}
+```
 
-<table>
-<tr>
-<td width="30%"><strong>Topic Name</strong></td>
-<td width="70%"><code>auralink/ai/response</code></td>
-</tr>
-<tr>
-<td><strong>Direction</strong></td>
-<td>Backend ➡️ ESP32</td>
-</tr>
-<tr>
-<td><strong>Trigger</strong></td>
-<t
+**Urgency Levels:**
+- `green` → Low priority (0-2 urgent emails)
+- `yellow` → Medium priority (3-5 urgent emails)
+- `red` → High priority (6+ urgent emails)
+
+---
+
+## ⚙️ Configuration
+
+### ESP32 Configuration (`Aura_tec.ino`)
+
+```cpp
+// Wi-Fi Configuration
+const char* ssid = "YOUR_WIFI_SSID";
+const char* password = "YOUR_WIFI_PASSWORD";
+
+// MQTT Configuration
+const char* mqtt_server = "broker.hivemq.com";
+const int mqtt_port = 1883;
+
+// Hardware Pins
+#define DHTPIN 4
+#define LED_RED 25
+#define LED_GREEN 26
+#define LED_BLUE 27
+```
+
+### Backend Configuration (`.env`)
+
+```env
+# OpenAI Configuration
+OPENAI_API_KEY=sk-...
+OPENAI_MODEL=gpt-3.5-turbo
+
+# MQTT Configuration
+MQTT_BROKER=broker.hivemq.com
+MQTT_TOPIC_SENSOR=auralink/sensors/data
+MQTT_TOPIC_RESPONSE=auralink/display/output
+
+# Gmail Configuration
+GMAIL_CREDENTIALS_FILE=credentials.json
+GMAIL_TOKEN_FILE=token.json
+```
+
+---
+
+## 🛠 Troubleshooting
+
+### Device Won't Connect
+- ✅ Verify Wi-Fi credentials in firmware
+- ✅ Check serial monitor output (115200 baud)
+- ✅ Ensure router allows ESP32 connection
+- ✅ Try restarting ESP32 and router
+
+### MQTT Issues
+- ✅ Use MQTT Explorer to inspect topics
+- ✅ Verify broker address and port
+- ✅ Check QoS settings (should be 1)
+- ✅ Ensure topic names match exactly
+
+### LLM Timeouts
+- ✅ Verify OpenAI API key validity
+- ✅ Check internet connection
+- ✅ Consider implementing prompt caching
+- ✅ Increase timeout values in backend
+
+### Gmail OAuth Errors
+- ✅ Download fresh `credentials.json` from Google Cloud
+- ✅ Run OAuth flow once to generate `token.json`
+- ✅ Check API scopes in Google Cloud Console
+- ✅ Ensure Gmail API is enabled
+
+---
+
+## 🔭 Future Extensions
+
+### Planned Features
+- 🌡️ **BME280 Integration** – Add pressure sensing
+- 💨 **Air Quality Monitoring** – CO₂ sensors
+- 📊 **Predictive Analytics** – Trend analysis and alerts
+- 🔊 **Voice Output** – Text-to-speech responses
+- 📜 **E-Paper Display** – Low-power alternative
+- 🤖 **Multi-Agent System** – Separate agents for sensors, emails, and urgency
+
+### Scalability
+- Cloud deployment (AWS IoT / Azure IoT Hub)
+- Fleet management for multiple devices
+- Historical data analytics dashboard
+- Mobile app integration
+
+---
+
+## 📁 Files & Downloads
+
+### Project Files
+- `Aura_tec.ino` – ESP32 firmware
+- `auralink_backend.py` – Python backend
+- `.env.example` – Configuration template
+- `requirements.txt` – Python dependencies
+
+### Documentation
+- 📊 [Architecture Diagram](auralink_architecture.png)
+- 📄 [Technical Report](IoT_Final_Report.pdf)
+- 📋 [Project Proposal](Project_Proposal.pdf)
+- 📝 [Assignment Brief](IT4030_Assignment.pdf)
+
+---
+
+## 👥 Team
+
+**AuraLink Team (Group 62)**  
+IT4030 - Internet of Things  
+SLIIT - Year 4, Semester 1/2, 2025
+
+---
+
+## 🧾 License
+
+MIT License © 2025 AuraLink Team
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+
+---
+
+<div align="center">
+
+**⭐ Star this repo if you find it helpful!**
+
+Made with ❤️ by the AuraLink Team
+
+</div>
